@@ -1,0 +1,33 @@
+change-color {
+  color: black; 
+  transition: color 0.3s; 
+}
+
+
+.change-color:hover {
+  color: rgb(21, 0, 255); 
+}
+table,
+th,
+td {
+
+}
+.image {
+  border: 2px solid transparent; 
+  transition: border-color 0.3s; 
+  vertical-align: middle;
+  
+}
+
+.image:hover {
+  border-color: red; 
+}
+
+.table{
+  border-radius: 10px;
+  border-color: brown;
+}
+.table:hover {
+  scale:1.05;
+  color: rgb(21, 0, 255);
+}

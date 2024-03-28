@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 40px;
+    background-color: white;
+  }
+  .container:hover {
+    scale:1.05;
+  }
+  .icon {
+    margin-right: 10px;
+    margin-left: 8px;
+  }
+  .text {
+    font-size: larger;
+  }
+  table {
+    border-collapse: collapse;
+    border: 30px;
+    width: 100%;
+    
+  }
+  th,
+  td {
+    padding: 10px;
+  }
+  change-color {
+    color: black;
+    transition: color 0.3s; 
+    
+  }
+
+  .change-color:hover {
+    color: rgb(21, 0, 255);
+  }

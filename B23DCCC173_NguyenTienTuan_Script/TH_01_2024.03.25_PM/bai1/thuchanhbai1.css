@@ -1,0 +1,67 @@
+
+.v {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(65, 139, 201);
+    font-size: larger;
+    border: 1px;
+}
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+  /* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.h {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
+}
+  
+li b {
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+li b.active {
+    background-color: #04AA6D;
+    color: white;
+}
+  
+li b:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+.date{
+    height: 50px;
+    text-indent: 1%;
+    margin-top: auto;
+    background-color: rgb(181, 181, 181);
+    font-size: large;
+}
+.timkiem{
+    font-size: large;
+    float: right;
+    height: 20px;
+    margin-top: auto;
+    margin-right: 15px;
+}
