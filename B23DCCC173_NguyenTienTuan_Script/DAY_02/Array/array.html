@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('1. Thuộc tính Length <br>');
+
+        var array = new Array(1,2,3,4);
+        document.write(array.length + '<br>'); // 4
+
+        document.write('2. Hàm join <br>');
+        document.write(array.join('-') +'<br>'); // 1-2-3-4
+        console.log(array.join('-') +'<br>'); // 1-2-3-4-
+
+        document.write('3. Hàm concat <br>');
+        var arr_1 = new Array(1,2,3,4,5);
+        var arr_2 = new Array(6,7,8);
+        console.log(arr_1.concat(arr_2)); // [1, 2, 3, 4, 5, 6, 7, 8]
+        document.write('[1, 2, 3, 4, 5, 6, 7, 8] <br>')
+
+        document.write('4. Hàm concat <br>');
+        var arr = new Array(1,2,3,4,5);
+        document.write(arr.slice(1,3)) // 2,3
+        console.log(arr.slice(1,3));// [2,3]
+
+        document.write('5. Hàm reverse <br>');
+        var arr = new Array(1,2,3,4,5);
+        document.write('arr: ' + arr + '<br>') // 1,2,3,4,5
+        document.write('arr reverse: ' + arr.reverse() + '<br>') // 
+        console.log(arr.reverse()); // [5,4,3,2,1]
+    </script>
+</body>
+</html>
