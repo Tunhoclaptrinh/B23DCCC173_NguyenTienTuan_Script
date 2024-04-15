@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var List = [1, 9, 8, 7, 8, 6, 10, 10, 1, 2, 5, 4, 11, 12, 24, 13];
+
+        function mergeSort(list) {
+        if (list.length <= 1) {
+            return list;
+        } else {
+            const mid = Math.floor(list.length / 2);
+            const left = mergeSort(list.slice(0, mid));
+            const right = mergeSort(list.slice(mid));
+            return merge(left, right);
+        }
+        }
+
+        function merge(left, right) {
+        const mergedList = [];
+        let i = 0;
+        let j = 0;
+
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+            mergedList.push(left[i]);
+            i++;
+            } else {
+            mergedList.push(right[j]);
+            j++;
+            }
+        }
+
+        mergedList.push(...left.slice(i));
+        mergedList.push(...right.slice(j));
+
+        return mergedList;
+        }
+        console.log('Sort Array', mergeSort(List));
+
+        function Distinct_List(list){
+            var distinct_list = []
+            for ( var i = 0; i < list.length; i++){
+                if (list[i] == list[i+1]){
+                    i +=1
+                }
+                distinct_list.push(list[i])
+            }
+            return distinct_list;
+        }
+
+        // var merged = mergeSort(List);
+        console.log('Final Array: ',Distinct_List(mergeSort(List)));
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var List = [-2, -3, 1, 9, 8, 7, 8, 6, 10, 10, 1, 2, 5, 4, 11, 12, 24, 13];
+
+        function mergeSort(list) {
+        if (list.length <= 1) {
+            return list;
+        } else {
+            const mid = Math.floor(list.length / 2);
+            const left = mergeSort(list.slice(0, mid));
+            const right = mergeSort(list.slice(mid));
+            return merge(left, right);
+        }
+        }
+
+        function merge(left, right) {
+        const mergedList = [];
+        let i = 0;
+        let j = 0;
+
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+            mergedList.push(left[i]);
+            i++;
+            } else {
+            mergedList.push(right[j]);
+            j++;
+            }
+        }
+
+        mergedList.push(...left.slice(i));
+        mergedList.push(...right.slice(j));
+
+        return mergedList;
+        }
+        // console.log(mergeSort(List));
+
+        function Distinct_List(list){
+            var distinct_list = []
+            for ( var i = 0; i < list.length; i++){
+                if (list[i] == list[i+1]){
+                    i +=1
+                }
+                distinct_list.push(list[i])
+            }
+            return distinct_list;
+        }
+
+        // ex2
+
+        var merged = Distinct_List(mergeSort(List));
+        console.log(Distinct_List(mergeSort(List)));
+        
+        // a
+        var endOf_list = merged.length
+        console.log('Số lớn nhất của mảng là: ', merged[endOf_list-1]);
+
+        // b
+        function Square_Number (merged_list) {
+            var square_number =[];
+            for (var s = 0; s < merged_list.length; s++){
+                if (Number.isInteger(Math.sqrt(merged_list[s])) == true){
+                    square_number.push(merged_list[s]);
+                }
+                
+            }
+            return square_number;
+        }
+        console.log('Các số chính phương trong mảng: ',Square_Number(Distinct_List(mergeSort(List))));
+
+        // c
+        var average_number =0;
+        for (var s = 0; s < merged.length; s++){
+            average_number += merged[s];
+        }
+        average_number = average_number / merged.length;
+
+        console.log('Trung bình cộng: ', average_number)
+        function Bigger_Average (merged_list) {
+            bigger_average = []
+            for (var s = 0; s < merged_list.length; s++){
+                if (merged_list[s] > average_number ){
+                    bigger_average.push(merged_list[s])
+                }
+            }
+            return bigger_average;
+        }
+        console.log('Các số lớn hơn trung bình cộng trong mảng: ',Bigger_Average (merged))
+
+
+        // d
+        var average_positive_number =0;
+        for (var s = 0; s < merged.length; s++){
+            if (merged[s] >= 0) {
+                merged_positive = merged.slice(s,merged.length);
+                break;
+            }
+        }
+        console.log('Mảng các số không âm: ',merged_positive);
+        for (var s = 0; s < merged_positive.length; s++){
+            average_positive_number  += merged_positive[s];
+        }
+        average_positive_number = average_positive_number / merged_positive.length;
+        console.log('Trung bình cộng của các số không âm: ', average_positive_number);
+    </script>
+</body>
+</html>
