@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX1: Button Thay đổi</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="content">
+        <h3>UDU</h3>
+        <div>Sinh viên UDU năng động sáng tạo.</div>
+    </div>
+    <button type="button">Thay đổi</button>
+    <script>
+       $(document).ready(function() {
+            $("button").click(function() {
+                if ($('#content div').text() == 'Sinh viên UDU năng động sáng tạo.') {
+                    $('#content div').text('UDU students are dynamic and creative !!!');
+                }
+                else if ($('#content div').text() == 'UDU students are dynamic and creative !!!') {
+                    $('#content div').text('Sinh viên UDU năng động sáng tạo.');
+                }
+            });
+       });
+    </script>
+</body>
+</html>
