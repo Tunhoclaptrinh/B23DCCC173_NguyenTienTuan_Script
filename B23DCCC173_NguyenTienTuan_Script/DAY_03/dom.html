@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+// Cách 1:  
+    Car = {brand: 'BMV', price: 111111111, color: 'black'}  
+    document.write(Car.brand+" "+Car.price+" "+Car.color + '<br>');  
+// Cách 2:
+    var student=new Object();  
+    Car.brand="AAAA";  
+    Car.price=222222;  
+    Car.color= 'white';  
+    document.write(Car.brand+" "+Car.price+" "+Car.color + '<br>');  
+// Cách 3:
+    function car(brand,price,color){  
+    this.brand = brand;  
+    this.price = price;  
+    this.color = color;  
+    }  
+    Car1 = new car("CCCC",33333,'white');  
+    document.write(Car1.brand+" "+Car1.price+" "+Car1.color + '<br>');  
+// Cách 4:
+    class Person{
+        name;
+        age;
+        salary;
+        hello(){
+            document.write("Hello "+ this.name);
+            }
+
+            changeSalary(newSalary){
+            this.salary = newSalary;
+            }
+
+    }
+
+    a = new Person();
+    a.name = "Nguyễn Tiến Tuấn";
+    a.hello();
+    a.salary = 'xxxxx';
+    document.write('<br>'+'Lương' + ': ' + a.salary);
+</script>  
+</script>
+</html>

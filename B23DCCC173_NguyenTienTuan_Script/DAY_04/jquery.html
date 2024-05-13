@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <label for="password"> EX1 </label>
+    <input type='text' id="pwd" name="pwd" placeholder="Nhap mat khau cua ban" value="" >
+    <button id="hide">hide</button><br><br>
+
+    <label for="ex2"> EX2 </label>
+    <input type="text" id="taskInput" placeholder="Nhập nhiệm vụ">
+    <button id="addTaskButton">Thêm</button>
+    <ul id="taskList"></ul>
+    <script>
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                if ($("#pwd").attr("type") === "password") {
+                    $("#pwd").attr("type", "text");
+                } else {
+                    $("#pwd").attr("type", "password");
+                }
+            });
+        });
+
+        $(document).ready(function() {
+
+            $("#addTaskButton").click(function() {
+                var taskText = $("#taskInput").val();
+                if (taskText !== "") {
+                    $("#taskList").append("<li>" + taskText + "</li>");
+                    $("#taskList li").click(function() {
+                        $(this).css("color", "red");
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
