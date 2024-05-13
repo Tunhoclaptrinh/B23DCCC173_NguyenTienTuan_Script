@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id = 'inputA' placeholder="Nhap so A" >
+        <input type="number" id = 'inputB' placeholder="Nhap so B">
+        <br>
+        <div class="Button">
+        <button onclick="calculate('sum')" style="font-size: 10px; width: 25%; height: fit-content;">SUM</button>
+        <button onclick="calculate('substract')" style="font-size: 10px; width: 25%; height: fit-content;">SUBTRACT</button>
+        <button onclick="calculate('multiply')" style="font-size: 10px; width: 25%; height: fit-content;">MULTIPLY</button>
+        <button onclick="calculate('divide')" style="font-size: 10px; width: 25%; height: fit-content;">DIVIDE</button>
+        </div>
+        <br>
+        <button onclick="resInputs()">RESET</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            var A = parseFloat(document.getElementById('inputA').value);
+            var B = parseFloat(document.getElementById('inputB').value);
+
+            if(isNaN(A) || isNaN(B)) {
+                document.getElementById('result').textContent = 'Nhap so khac.';
+                return;
+            }
+            let result;
+            switch (operation) {
+                case 'sum':
+                    result = A + B;
+                    break;
+                case 'substract':
+                    result = A - B;
+                    break;
+                case 'multiply':
+                    result = A  * B;
+                    break;
+                case 'divide':
+                    result = B !== 0 ? A/B: "Khong the chia cho 0";
+                    break;
+                default:
+                    result = 'Unknown';
+
+            }
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+
+        function resInputs() {
+            document.getElementById('inputA').value = "";
+            document.getElementById('inputB').value = "";
+            document.getElementById('result').textContent = "";
+        }
+
+        
+    </script>
+</body>
+</html>
