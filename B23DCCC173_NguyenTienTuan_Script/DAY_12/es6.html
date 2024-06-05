@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<body>
+    abc
+    <script>
+        // Các kiểu khai báo biến
+        var x = 10;
+        if (x === 10) {
+        var x = 20; /* x được gán giá trị mới là 20 */
+        console.log(x); /* output: 20 */
+        }
+        console.log(x);  /* output: 20 */
+
+        let y = 10;
+        if (y === 10) {
+        let y = 20; /* y được let với giá trị mới là 20 */
+        console.log(y); /* output: 20, giá trị mới chỉ có tác dụng trong if */
+        }
+        console.log(y);  /* output: 10, y bên ngoài if, nên không bị ảnh hưởng giá trị mới */
+
+        const z = 10;
+        console.log(z);  /* output: 10 */
+        // if (z === 10) {
+        // z = 20;
+        // console.log(z); /* output: Error */
+        // }
+
+
+        // Khai báo tham số mặc định
+        function multiply(a, b = 1) {
+        return a * b;
+        }
+
+        console.log(multiply(5, 2)); /* ouput: 10 */
+        console.log(multiply(5)); /* ouput: 5 */
+
+        function member(name) {
+        name = name || "Guess";
+        return name;
+        }
+        console.log(member()); /* ouput: Guess */
+        console.log(member("Dương Minh Trí")); /* ouput: "Dương Minh Trí" */
+
+        // Spread syntax
+        const oldArray = [1, 2, 3];
+        const newArray = [oldArray, 4, 5];
+        console.log(newArray); /* ouput: (3) [Array(3), 4, 5] */
+
+        const oldArray1 = [1, 2, 3];
+        const newArray1 = [...oldArray1, 4, 5];
+        console.log(newArray1); /* ouput: (5) [1, 2, 3, 4, 5] */
+
+        const oldObject = {
+        name: 'Dương Minh Trí'
+        };
+
+        const newObject = {
+        oldObject,
+        age: 4
+        };
+
+        console.log(newObject); /* ouput: {oldObject: {…}, age: 4} */
+
+        const oldObject1 = {
+        name: 'Dương Minh Trí'
+        };
+
+        const newObject1 = {
+        ...oldObject,
+        age: 4
+        };
+
+        console.log(newObject1 ); /* ouput: {name: 'Dương Minh Trí', age: 4} */
+
+        // Rest parameters
+        function number(num1, num2, ...numOther){
+        console.log("x:", num1); 
+        console.log("y:", num2);
+        console.log("Other number:", numOther);
+        }
+        number("one", "two", "three", "four", "five", "six");
+        /* ouput: 
+        x: one
+        y: two
+        Other number: (4) ["three", "four", "five", "six"] */
+
+        function number(...numOther){
+        console.log(number.length);
+        }
+        number() /* ouput: 0 */
+        number(7) /* ouput: 1 */
+        number(2, 4, 7) /* ouput: 3 */
+
+        // Destructuring
+        const array = [1, 2, 3];
+        const [a, b] = array;
+        console.log(a); /* output: 1 */
+        console.log(b); /* output: 2 */
+        console.log(array); /* output: [1, 2, 3] */
+
+        const myObject = {
+            name: "Dương Minh Trí"
+            //age: 4
+        }
+        const {name, age} = myObject;
+        console.log(name); /* output: "Dương Minh Trí" */
+        console.log(age); /* output: 4 */
+        console.log(myObject); /* output: {name: "Dương Minh Trí", age: 4} */
+
+        //ES6 arrow function, viết function dưới dạng mũi tên =>.
+        var functionName = function(val1, val2){
+        /* Nội dung function */
+        }
+        var functionName = (val1, val2) => {
+        /* Nội dung function */
+        }
+    </script>
+</body>
+</html>
