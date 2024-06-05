@@ -1,0 +1,42 @@
+* {
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+#header {
+	font-size: 40px;
+	text-decoration: none;
+	padding-left: 550px;
+	height: 60px;
+	background-color:#F8F8FF;
+	color:#008000;
+}
+html {
+	color: blue;
+}
+
+input {
+	border:1px groove;
+}
+table {
+	padding-right: 300px;
+	padding-left:550px;
+	font-size: 20px;
+	width: 100%;
+	border: 3px solid black;
+}
+.check {
+	padding-left:550px;
+}
+#footer {
+	padding-bottom: 0px;
+	height: 45px;
+	background-color: #ccc;
+}
+.name {
+	columns: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
